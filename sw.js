@@ -1,7 +1,7 @@
-/* Personal Finance Planner service worker 2cb08f1069b2 (generated) */
-const VERSION = "2cb08f1069b2";
+/* Personal Finance Planner service worker b5649cfb2fcf (generated) */
+const VERSION = "b5649cfb2fcf";
 const CACHE = "pf-trial-shell-" + VERSION;
-const ASSETS = ["./","./assets/index-BLDd-MK3.js","./assets/index-DuH4SUBA.css","./assets/sql-wasm-Bku9E_kW.wasm","./icons/apple-touch-icon.png","./icons/icon-192.png","./icons/icon-512.png","./icons/maskable-512.png","./index.html","./manifest.webmanifest"];
+const ASSETS = ["./","./assets/index-CsqYdTPo.js","./assets/index-DhKWQj3V.css","./assets/sql-wasm-Bku9E_kW.wasm","./icons/apple-touch-icon.png","./icons/icon-192.png","./icons/icon-512.png","./icons/maskable-512.png","./index.html","./manifest.webmanifest"];
 // skipWaiting only after every app file is cached. Pages decide when to reload (locked screens reload at once; an unlocked session is never interrupted).
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS.map((a) => new Request(a, { cache: 'reload' })))).then(() => self.skipWaiting())); });
 self.addEventListener('activate', (e) => { e.waitUntil((async () => { for (const k of await caches.keys()) if (k.startsWith("pf-trial-shell-") && k !== CACHE) await caches.delete(k); await self.clients.claim(); })()); });
